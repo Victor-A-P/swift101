@@ -286,7 +286,8 @@ Para los ejemplos se usara las siguientes variables:
   |```<<=```|Desplazamiento a la izquierda con asignación|```var a = 0b0001 ``` <br><br>``` a <<= 2```|```a => 0b0100``` es 4 en decimal, ya que este operador desplaza los bits de la variable hacia la izquierda por el número de posiciones especificado, llenando con ceros los bits menos significativos(a la derecha) y asigna el resultado de la variable.<br> ```<<``` es el operador sin operador de asignación|
   |```>>=```|Desplazamiento a la derecha con asignación|``` a >>= 2```|```a => 0b0011``` es 3 en decimal, ya que este operador desplaza los bits de la variable hacia la derecha por el número de posiciones especificado, llenando con ceros los bits más significativos (para enteros sin signo), y asigna el resultado a la variable.<br> ```>>``` es el operador sin operador de asignación|
 
-    >[!NOTE] Adicionalmente hay un operador más &nbsp;<code> ~ </code>&nbsp; en las operaciones de bit que invierte los valores de los bit, es decir 0 -> 1 y 1 -> 0
+    >[!NOTE] 
+    > Adicionalmente hay un operador más &nbsp;<code> ~ </code>&nbsp; en las operaciones de bit que invierte los valores de los bit, es decir 0 -> 1 y 1 -> 0
 
   
  
@@ -370,7 +371,8 @@ Son aquellos que cambian el signo de una variable(valor) numerica con solo un pr
 <br><br>
 
 
->[!WARNING] En Swift el espacio que se deja antes y despues de un operador debe de ser el mismo, de lo contrario habrá un error
+>[!WARNING]    
+> En Swift el espacio que se deja antes y despues de un operador debe de ser el mismo, de lo contrario habrá un error
 
 <br>
 
@@ -386,7 +388,8 @@ Son pedazos de código que realizan cierta tarea; estas tienen un tipo de retorn
         ...
     }
 ``` 
-[!CAUTION] Swift es un lenguaje que te permite tener un &nbsp;<code>argumentLabel</code>&nbsp; _'Etiqueta de Argumento'_ que es con el que se mandará a llamar la función &nbsp;<code> parameterName </code>&nbsp; _'Nombre del parametro'_ que es con la que se trabaja dentro del cuerpo de la función
+[!CAUTION] 
+> Swift es un lenguaje que te permite tener un &nbsp;<code>argumentLabel</code>&nbsp; _'Etiqueta de Argumento'_ que es con el que se mandará a llamar la función &nbsp;<code> parameterName </code>&nbsp; _'Nombre del parametro'_ que es con la que se trabaja dentro del cuerpo de la función
 >``` swift
 >   func saludar(a nombre: String) 
 >   {
@@ -405,7 +408,8 @@ Son pedazos de código que realizan cierta tarea; estas tienen un tipo de retorn
 ### PIE DE PÁGINA
 
 ###### Subindice [1]
->[!NOTE] Lenguaje Compilado VS Interpretado VS Trasnpilado
+>[!NOTE] 
+>Lenguaje Compilado VS Interpretado VS Trasnpilado
 >
 ><table>
 >   <thead>
@@ -482,7 +486,8 @@ Son pedazos de código que realizan cierta tarea; estas tienen un tipo de retorn
 ----------------------------------------------------------------------
 <!-- ------------------------------------------------------ -->
 ###### Subindice [2]
->[!NOTE] Un lenguaje de programación multiparadigma
+>[!NOTE] 
+> Un lenguaje de programación multiparadigma
 > Es aquel que permite usar más de un paradigma de programación dentro de un mismo programa. Esto le da más flexibilidad y versatilidad al programador.<br><br> Un paradigma de programación es un estilo o forma de programar, es decir, un enfoque para resolver problemas. Algunos paradigmas de programación son: 
 >* Orientado a objetos, 
 >* Funcional, 
@@ -507,7 +512,8 @@ Son pedazos de código que realizan cierta tarea; estas tienen un tipo de retorn
 ----------------------------------------------------------------------
 <!-- ------------------------------------------------------ -->
 ###### Subindice [3]
->[!NOTE] Esto es el ejemplo correspondiente al  operador &nbsp;<code>===</code>&nbsp; 'Identico a '
+>[!NOTE] 
+> Esto es el ejemplo correspondiente al  operador &nbsp;<code>===</code>&nbsp; 'Identico a '
 >``` swift
 >   class Persona 
 >   {
@@ -534,7 +540,8 @@ Son pedazos de código que realizan cierta tarea; estas tienen un tipo de retorn
 ----------------------------------------------------------------------
 <!-- ------------------------------------------------------ -->
 ###### Subindice [4]
->[!NOTE] Esto es el ejemplo correspondiente al  operador &nbsp;<code>!==</code>&nbsp; 'NO Identico a '
+>[!NOTE] 
+> Esto es el ejemplo correspondiente al  operador &nbsp;<code>!==</code>&nbsp; 'NO Identico a '
 > Para este ejemplo se toma la clase declarada en el <b><small>[Subindice 4](#subindice-4)</small></b> 
 >``` swift
 >   print(persona1 !== persona3) // true
@@ -549,7 +556,8 @@ Son pedazos de código que realizan cierta tarea; estas tienen un tipo de retorn
 ----------------------------------------------------------------------
 <!-- ------------------------------------------------------ -->
 ###### Subindice [5]
->[!NOTE] Esto es el ejemplo correspondiente al  operador &nbsp;<code> ~= </code>&nbsp; 'Coincidencia de patrones'
+>[!NOTE] 
+> Esto es el ejemplo correspondiente al  operador &nbsp;<code> ~= </code>&nbsp; 'Coincidencia de patrones'
 >Devuelve un valor booleano que indica si dos argumentos coinciden por igualdad de valor<br>
 >``` swift
 >    func ~= <T>(a: T, b: T) -> Bool where T : Equatable
@@ -582,7 +590,8 @@ Son pedazos de código que realizan cierta tarea; estas tienen un tipo de retorn
 ----------------------------------------------------------------------
 <!-- ------------------------------------------------------ -->
 ###### Subindice [6]
->[!NOTE] Ejemplo correspondiente al operador &nbsp;<code> ?. </code>&nbsp; 'Encadenamiento opcional'
+>[!NOTE] 
+> Ejemplo correspondiente al operador &nbsp;<code> ?. </code>&nbsp; 'Encadenamiento opcional'
 >
 >``` swift
 >   class Persona 
