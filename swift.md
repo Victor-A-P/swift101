@@ -384,14 +384,14 @@ Son pedazos de código que realizan cierta tarea; estas tienen un tipo de retorn
         ...
     }
 ``` 
->[!CAUTION] Swift es un poco especialito y te permite tener un &nbsp;<code>argumentLabel</code>&nbsp; _'Etiqueta de Argumento'_ que es con el que se mandará a llamar la función &nbsp;<code> parameterName </code>&nbsp; <u>'Nombre del parametro'</u> que es con la que se trabaja dentro del cuerpo de la función
+>[!CAUTION] Swift es un lenguaje que te permite tener un &nbsp;<code>argumentLabel</code>&nbsp; _'Etiqueta de Argumento'_ que es con el que se mandará a llamar la función &nbsp;<code> parameterName </code>&nbsp; _'Nombre del parametro'_ que es con la que se trabaja dentro del cuerpo de la función
 >``` swift
 >   func saludar(a nombre: String) 
 >   {
 >       print("Hola, \(nombre)")
 >   }
 >
->   saludar(a: "Carlos") // Imprime: Hola, Carlos
+>   saludar(a: "Alex") // Imprime: Hola, Alex
 >```
 
 <br>
