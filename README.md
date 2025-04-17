@@ -1,6 +1,6 @@
 # swift101
 This is a repository mainly for me to upload the notes(that you can find [here](./swift.md) I did in markdown of the topic in Spanish while I was studying the topic that 
-
+-----------------------------------------------------------------------
 ## INDICE
 * [**¿Qué es?**](#qué-es)<br>
 * [**Variables**](#variables)<br>
@@ -248,25 +248,25 @@ Para los ejemplos se usara las siguientes variables:
 ```
 
 * #### Aritmeticos
-  | Operador |  Significado   | Ejemplo             |
-  | :------: | :------------: | :------------------ |
-  | ```+```  |      Suma      | ``` var1 + var2 ``` |
-  | ```-```  |     Resta      | ```var1 - var2```   |
-  | ```*```  | Multiplicación | ```var1 * var2```   |
-  | ```/```  |    División    | ```var1 / var2```   |
-  | ```%```  | Residuo<br>Mod | ```var1 % var2```   |
+  | Operador | Significado |Ejemplo|
+  |:-:|:-:|:-|
+  |```+```|Suma|``` var1 + var2 ```|
+  |```-```|Resta|```var1 - var2```|
+  |```*```|Multiplicación|```var1 * var2```|
+  |```/```|División|```var1 / var2```|
+  |```%```|Residuo<br>Mod|```var1 % var2```|
 
 <br>
 
 * #### Asignación
-  | Operador |  Significado   | Ejemplo              | Resultado         |
-  | :------: | :------------: | :------------------- | :---------------- |
-  | ```=```  |   Asignación   | ```let var1 = -10``` |                   |
-  | ```+=``` |    Adicción    | ```var1 += 2```      | ```var1 => -8```  |
-  | ```-=``` |  Sustracción   | ```var1 -= 2```      | ```var1 => -12``` |
-  | ```*=``` | Multiplicación | ```var1 *= 2```      | ```var1 => -20``` |
-  | ```/=``` |    División    | ```var1 /= 2```      | ```var1 => -5```  |
-  | ```%=``` |    Residuo     | ```var1 % = 2```     | ```var1 => 0```   |
+  | Operador | Significado |Ejemplo|Resultado|
+  |:-:|:-:|:-|:-|
+  |```=```| Asignación|```let var1 = -10```||
+  |```+=```|Adicción|```var1 += 2```|```var1 => -8```|
+  |```-=```|Sustracción|```var1 -= 2```|```var1 => -12```|
+  |```*=```|Multiplicación|```var1 *= 2```|```var1 => -20```|
+  |```/=```|División|```var1 /= 2```|```var1 => -5```|
+  |```%=```|Residuo|```var1 % = 2```|```var1 => 0```|
 
     <br>
 
@@ -276,13 +276,13 @@ Para los ejemplos se usara las siguientes variables:
     ``` swift
         var a = 0b1100  //
     ```
-    | Operador  |                 Significado                  | Ejemplo                                      | Resultado                                                                                                                                                                                                                                                                                                                |
-    | :-------: | :------------------------------------------: | :------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-    | ```&=```  |                Operación AND                 | ```a &= 0b1010```                            | ```a => 0b1000``` es 8 en decimal, esto es porque en la operación AND solo los bits que estan activos en ambos operandos permanecen activos en el resultado.<br> ```&``` es el operador sin operador de asignación                                                                                                       |
-    | ```\|=``` |                 Operación OR                 | ```a \|= 0b1010```                           | ```a => 0b1110``` es 14 en decimal, esto porque en la operación OR los bits que estan activos en alguno de los operandos permanecen activos en el resultado.<br> ```\|```  es el operador sin operador de asignación                                                                                                     |
-    | ```^=```  |                Operación XOR                 | ```a ^= 0b1010```                            | ```a => 0b0110``` es 6 en decimal, esto porque el la operación XOR solo los bits que son diferentes entre los operandos se establecen como 1 en el resultado.<br> ```^``` es el operador sin operador de asignación                                                                                                      |
-    | ```<<=``` | Desplazamiento a la izquierda con asignación | ```var a = 0b0001 ``` <br><br>``` a <<= 2``` | ```a => 0b0100``` es 4 en decimal, ya que este operador desplaza los bits de la variable hacia la izquierda por el número de posiciones especificado, llenando con ceros los bits menos significativos(a la derecha) y asigna el resultado de la variable.<br> ```<<``` es el operador sin operador de asignación        |
-    | ```>>=``` |  Desplazamiento a la derecha con asignación  | ``` a >>= 2```                               | ```a => 0b0011``` es 3 en decimal, ya que este operador desplaza los bits de la variable hacia la derecha por el número de posiciones especificado, llenando con ceros los bits más significativos (para enteros sin signo), y asigna el resultado a la variable.<br> ```>>``` es el operador sin operador de asignación |
+    | Operador | Significado |  Ejemplo |Resultado|
+    |:-:|:-:|:-|:-|
+    |```&=```|Operación AND|```a &= 0b1010```|```a => 0b1000``` es 8 en decimal, esto es porque en la operación AND solo los bits que estan activos en ambos operandos permanecen activos en el resultado.<br> ```&``` es el operador sin operador de asignación|
+    |```\|=```|Operación OR|```a \|= 0b1010```|```a => 0b1110``` es 14 en decimal, esto porque en la operación OR los bits que estan activos en alguno de los operandos permanecen activos en el resultado.<br> ```\|```  es el operador sin operador de asignación|
+    |```^=```|Operación XOR|```a ^= 0b1010```|```a => 0b0110``` es 6 en decimal, esto porque el la operación XOR solo los bits que son diferentes entre los operandos se establecen como 1 en el resultado.<br> ```^``` es el operador sin operador de asignación|
+    |```<<=```|Desplazamiento a la izquierda con asignación|```var a = 0b0001 ``` <br><br>``` a <<= 2```|```a => 0b0100``` es 4 en decimal, ya que este operador desplaza los bits de la variable hacia la izquierda por el número de posiciones especificado, llenando con ceros los bits menos significativos(a la derecha) y asigna el resultado de la variable.<br> ```<<``` es el operador sin operador de asignación|
+    |```>>=```|Desplazamiento a la derecha con asignación|``` a >>= 2```|```a => 0b0011``` es 3 en decimal, ya que este operador desplaza los bits de la variable hacia la derecha por el número de posiciones especificado, llenando con ceros los bits más significativos (para enteros sin signo), y asigna el resultado a la variable.<br> ```>>``` es el operador sin operador de asignación|
 
     >[!NOTE] Adicionalmente hay un operador más &nbsp;<code> ~ </code>&nbsp; en las operaciones de bit que invierte los valores de los bit, es decir 0 -> 1 y 1 -> 0
 
@@ -292,17 +292,17 @@ Para los ejemplos se usara las siguientes variables:
 
 * #### Comparación
   
-    | Operador  |       Significado        |                      Ejemplo                       | Resultado                 |
-    | :-------: | :----------------------: | :------------------------------------------------: | :------------------------ |
-    | ```==```  |         Igual a          | ```let a = 1```<br>```let b = 1```<br>```a == b``` | ```true```                |
-    | ```===``` |        Identico a        |      <b><small>[3](#subindice-3)</small></b>       | ```true```<br>```false``` |
-    | ```!=```  |       Diferente de       |                       a != b                       | ```false```               |
-    | ```!==``` |      NO identico a       |      <b><small>[4](#subindice-4)</small></b>       | ```true```                |
-    | ```~=```  | Coincidencia de Patrones |        <b><small>[5](#subindice-5)</small>         | ```true```                |
-    |  ```>```  |        Mayor que         |                    ```5 > 10```                    | ```false```               |
-    |  ```<```  |        Menor que         |                    ```5 < 10```                    | ```true```                |
-    | ```<=```  |    Menor o Igual que     |                   ```5 <= 10```                    | ```true```                |
-    | ```>=```  |    Mayor o Igual que     |                   ```5 >= 10```                    | ```false```               |
+    | Operador | Significado |Ejemplo|Resultado|
+    |:-:|:-:|:-:|:-|
+    |```==```|Igual a|```let a = 1```<br>```let b = 1```<br>```a == b```|```true```|
+    |```===```|Identico a|<b><small>[3](#subindice-3)</small></b>|```true```<br>```false```|
+    |```!=```|Diferente de| a != b|```false```|
+    |```!==```|NO identico a| <b><small>[4](#subindice-4)</small></b>|```true```|
+    |```~=```|Coincidencia de Patrones|<b><small>[5](#subindice-5)</small>|```true```|
+    |```>```|Mayor que|```5 > 10```|```false```|
+    |```<```|Menor que|```5 < 10```|```true```|
+    |```<=```|Menor o Igual que|```5 <= 10```|```true```|
+    |```>=```|Mayor o Igual que|```5 >= 10```|```false```|
 
 
 <br>
@@ -310,38 +310,38 @@ Para los ejemplos se usara las siguientes variables:
 * #### Unitarios
 
 Son aquellos que cambian el signo de una variable(valor) numerica con solo un prefijo
-  | Operador |  Significado   | Ejemplo              | Resultado                                                                |
-  | :------: | :------------: | :------------------- | :----------------------------------------------------------------------- |
-  | ```-```  | Signo Negativo | ```let ab = -var1``` | ```ab = 10```  -> <br>esto por la multiplicación de signos (-)(-) = (+)  |
-  | ```+```  | Signo Positivo | ```let ab = +var1``` | ```ab = -10```  -> <br>esto por la multiplicación de signos (-)(+) = (-) |
+  | Operador | Significado |Ejemplo|Resultado|
+  |:-:|:-:|:-|:-|
+  |```-```|Signo Negativo|```let ab = -var1```|```ab = 10```  -> <br>esto por la multiplicación de signos (-)(-) = (+)
+  |```+```|Signo Positivo|```let ab = +var1```|```ab = -10```  -> <br>esto por la multiplicación de signos (-)(+) = (-)
 
 <br>
 
 * #### Lógicos
-  |  Operador  |                      Significado                       | Ejemplo                                         | Resultado                                                                                   |
-  | :--------: | :----------------------------------------------------: | :---------------------------------------------- | :------------------------------------------------------------------------------------------ |
-  |  ```!```   |                        Negación                        | ```var ab1 = (!(var1 == 10 ? true : false));``` | Devuelve el  valor negado, en este caso ```!(false) = true``` ya que ```var1 = -10```       |
-  |  ```&&```  |               Conjunción Lógica<br>(And)               | ```var1 = -10 && var2 =6```                     | Ambas enunciados tienen que ser verdaderos para que sea ```true```                          |
-  | ```\|\|``` | Disyunción Lógica<br>o<br>Disyunción Inclusiva<br>(OR) | ```var1 = 1 \|\| var2 = 6```                    | Solo una de los 2 enunciados tiene que ser verdad para que el valor devuelto sea ```true``` |
-  |  ```()```  |                 Paréntesis Explícitos                  | ```!(...)```                                    | Negará lo que esta dentro del paréntesis; hacen mas fácil de leer la expresión              |
+  | Operador | Significado |Ejemplo|Resultado|
+  |:-:|:-:|:-|:-|
+  |```!```|Negación|```var ab1 = (!(var1 == 10 ? true : false));```|Devuelve el  valor negado, en este caso ```!(false) = true``` ya que ```var1 = -10```|
+  |```&&```|Conjunción Lógica<br>(And)|```var1 = -10 && var2 =6```|Ambas enunciados tienen que ser verdaderos para que sea ```true```|
+  |```\|\|```|Disyunción Lógica<br>o<br>Disyunción Inclusiva<br>(OR)|```var1 = 1 \|\| var2 = 6```|Solo una de los 2 enunciados tiene que ser verdad para que el valor devuelto sea ```true```|
+  |```()``` |Paréntesis Explícitos|```!(...)```| Negará lo que esta dentro del paréntesis; hacen mas fácil de leer la expresión|
 
 
 <br>
 
 
 * #### Rango
-  |          Operador           |      Significado      | Ejemplo                                                                                                                                                                                                                                                                                                    |
-  | :-------------------------: | :-------------------: | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-  |        ```a ... b```        |     Rango Cerrado     | ```1 ... 6``` va del 1 a 6 tomando en cuenta ambos limites como posibles valores                                                                                                                                                                                                                           |
-  |        ```a ..< b```        | Rango<br>Semi-Abierto | ```1 ..< 6``` va del 1 a 5 tomando en cuanta solo el 1 como posible valor                                                                                                                                                                                                                                  |
-  | ```..< b```<br>```a ... ``` |  Rango<br>Unilateral  | ``` ..< 3``` Este rango tendrá como valores cualquier número que se encuentre antes del 3 incluyendo valores negativos<br>```1 ... ``` Este rango tendra como valores cualquier número natural(0~...), &nbsp;<b>por ello es de suma importancia delimitar una condición cuando debe de acabar el rango</b> |
+  | Operador | Significado |Ejemplo|
+  |:-:|:-:|:-|
+  |```a ... b```|Rango Cerrado|```1 ... 6``` va del 1 a 6 tomando en cuenta ambos limites como posibles valores|
+  |```a ..< b```|Rango<br>Semi-Abierto|```1 ..< 6``` va del 1 a 5 tomando en cuanta solo el 1 como posible valor|
+  |```..< b```<br>```a ... ```|Rango<br>Unilateral|``` ..< 3``` Este rango tendrá como valores cualquier número que se encuentre antes del 3 incluyendo valores negativos<br>```1 ... ``` Este rango tendra como valores cualquier número natural(0~...), &nbsp;<b>por ello es de suma importancia delimitar una condición cuando debe de acabar el rango</b> |
 
 
 * #### Desbordamiento
-  | Operador | Significado  | Ejemplo                     |
-  | :------: | :----------: | :-------------------------- |
-  | ```-&``` | Substracción | <b><small>[6]()</small></b> |
-  | ```+&``` |   Adicción   | <b><small>[6]()</small></b> |
+  | Operador | Significado |Ejemplo|
+  |:-:|:-:|:-|
+  |```-&```|Substracción| <b><small>[6]()</small></b>|
+  |```+&```|Adicción| <b><small>[6]()</small></b>|
 
 ``` swift
     var willOverflow = UInt8.max
@@ -359,12 +359,12 @@ Son aquellos que cambian el signo de una variable(valor) numerica con solo un pr
 
 
 * #### Valores Opcionales y Flujo del Programa
-    |  Operador  |       Significado       | Ejemplo                                                                                                                                                                                                                                                                                                                                                                 |
-    | :--------: | :---------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-    | ``` ?? ``` |     Fusión de Nulos     | ``` let nombreOpcional: String? = nil```<br>```let nombre = nombreOpcional ?? "Invitado"```<br>```print(nombre) // Imprime "Invitado"```<br>Permite proporcionar un valor <u>predeterminado</u> cuando un valor opcional es ```nil```                                                                                                                                   |
-    |  ```?:```  |  Condicional Ternario   | ```let mensaje = edad >= 18 ? "Adulto" : "Menor"```<br>Permite realizar una evaluación condicional que devuelve uno de dos valores                                                                                                                                                                                                                                      |
-    |  ```!```   | Desempaquetado forzado  | ```let textoOpcional: String? = "Hola"```<br>```let texto = textoOpcional!```<br>Es utilizado para acceder al valor subyacente de un opcional que se sabe que no es ```nil```<br><small>*Es importante asegurarse de que el valor opcional no sea ```nil``` antes de usar ```!```, ya que de lo contrario el programa generará un error en tiempo de ejecución.</small> |
-    |  ```?.```  | Encadenamiento opcional | <b>[]()</b><br>Este operador permite acceder a propiedades, métodos o subíndices de un valor opcional de forma segura. Si el valor opcional es nil, la expresión completa devuelve nil sin causar un error.                                                                                                                                                             |
+    | Operador | Significado | Ejemplo |
+    |:------:|:---------:|:------|
+    |``` ?? ```|Fusión de Nulos|``` let nombreOpcional: String? = nil```<br>```let nombre = nombreOpcional ?? "Invitado"```<br>```print(nombre) // Imprime "Invitado"```<br>Permite proporcionar un valor <u>predeterminado</u> cuando un valor opcional es ```nil```|
+    |```?:```|Condicional Ternario|```let mensaje = edad >= 18 ? "Adulto" : "Menor"```<br>Permite realizar una evaluación condicional que devuelve uno de dos valores|
+    |```!```|Desempaquetado forzado|```let textoOpcional: String? = "Hola"```<br>```let texto = textoOpcional!```<br>Es utilizado para acceder al valor subyacente de un opcional que se sabe que no es ```nil```<br><small>*Es importante asegurarse de que el valor opcional no sea ```nil``` antes de usar ```!```, ya que de lo contrario el programa generará un error en tiempo de ejecución.</small>|
+    |```?.```|Encadenamiento opcional|<b>[]()</b><br>Este operador permite acceder a propiedades, métodos o subíndices de un valor opcional de forma segura. Si el valor opcional es nil, la expresión completa devuelve nil sin causar un error.|
 
 <br><br>
 
