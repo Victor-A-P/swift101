@@ -35,7 +35,7 @@ Las metas del lenguaje son:
 ### Variables
 
 En Swift es posible asociar valores con un nombre, definiendolo como una variable y asignandole un valor. Este mismo nombre puede ser usado para referirse al valor a lo largo del programa
->[!Tip] Las variables son &nbsp;<u><b>mutables</b></u>&nbsp; lo que significa que puede ser cambiado en cualquier momento
+>[!TIP] Las variables son &nbsp;<u><b>mutables</b></u>&nbsp; lo que significa que puede ser cambiado en cualquier momento
 
 Las variables en Swift se definen con la palabra clave ```var```
 
@@ -44,7 +44,7 @@ Las variables en Swift se definen con la palabra clave ```var```
     var imoVar : Int = 12; //variable explicita ya que se indica que es int; 
 ```
 
->[!Note] Swift es un lenguaje "&nbsp;type-safe&nbsp; "
+>[!NOTE] Swift es un lenguaje "&nbsp;type-safe&nbsp; "
 > Es decir que es un lenguaje tipado estaticamente seguro, lo que significa que todos los valores tienen un "tipo" al momento que se compila y se puede declarar estas explicitamente o dejar que el compilador infiera el tipo; de tal manera que el "tipo" de la varible se fija una vez es definida.
 
 ``` swift
@@ -270,19 +270,19 @@ Para los ejemplos se usara las siguientes variables:
 
     <br>
 
-    Para operaciones con datos a nivel de bits, como en la criptografía o compresión de datos.
+  Para operaciones con datos a nivel de bits, como en la criptografía o compresión de datos.
 
-    Se utiliza esta variable en los siguientes operadores, a no ser que se cambie el valor en el ejemplo
-    ``` swift
-        var a = 0b1100  //
-    ```
-    | Operador | Significado |  Ejemplo |Resultado|
-    |:-:|:-:|:-|:-|
-    |```&=```|Operación AND|```a &= 0b1010```|```a => 0b1000``` es 8 en decimal, esto es porque en la operación AND solo los bits que estan activos en ambos operandos permanecen activos en el resultado.<br> ```&``` es el operador sin operador de asignación|
-    |```\|=```|Operación OR|```a \|= 0b1010```|```a => 0b1110``` es 14 en decimal, esto porque en la operación OR los bits que estan activos en alguno de los operandos permanecen activos en el resultado.<br> ```\|```  es el operador sin operador de asignación|
-    |```^=```|Operación XOR|```a ^= 0b1010```|```a => 0b0110``` es 6 en decimal, esto porque el la operación XOR solo los bits que son diferentes entre los operandos se establecen como 1 en el resultado.<br> ```^``` es el operador sin operador de asignación|
-    |```<<=```|Desplazamiento a la izquierda con asignación|```var a = 0b0001 ``` <br><br>``` a <<= 2```|```a => 0b0100``` es 4 en decimal, ya que este operador desplaza los bits de la variable hacia la izquierda por el número de posiciones especificado, llenando con ceros los bits menos significativos(a la derecha) y asigna el resultado de la variable.<br> ```<<``` es el operador sin operador de asignación|
-    |```>>=```|Desplazamiento a la derecha con asignación|``` a >>= 2```|```a => 0b0011``` es 3 en decimal, ya que este operador desplaza los bits de la variable hacia la derecha por el número de posiciones especificado, llenando con ceros los bits más significativos (para enteros sin signo), y asigna el resultado a la variable.<br> ```>>``` es el operador sin operador de asignación|
+  Se utiliza esta variable en los siguientes operadores, a no ser que se cambie el valor en el ejemplo
+  ``` swift
+    var a = 0b1100  // 12 en decimal
+  ```
+  | Operador | Significado |  Ejemplo |Resultado|
+  |:-:|:-:|:-|:-|
+  |```&=```|Operación AND|```a &= 0b1010```|```a => 0b1000``` es 8 en decimal, esto es porque en la operación AND solo los bits que estan activos en ambos operandos permanecen activos en el resultado.<br> ```&``` es el operador sin operador de asignación|
+  |```\|=```|Operación OR|```a \|= 0b1010```|```a => 0b1110``` es 14 en decimal, esto porque en la operación OR los bits que estan activos en alguno de los operandos permanecen activos en el resultado.<br> ```\|```  es el operador sin operador de asignación|
+  |```^=```|Operación XOR|```a ^= 0b1010```|```a => 0b0110``` es 6 en decimal, esto porque el la operación XOR solo los bits que son diferentes entre los operandos se establecen como 1 en el resultado.<br> ```^``` es el operador sin operador de asignación|
+  |```<<=```|Desplazamiento a la izquierda con asignación|```var a = 0b0001 ``` <br><br>``` a <<= 2```|```a => 0b0100``` es 4 en decimal, ya que este operador desplaza los bits de la variable hacia la izquierda por el número de posiciones especificado, llenando con ceros los bits menos significativos(a la derecha) y asigna el resultado de la variable.<br> ```<<``` es el operador sin operador de asignación|
+  |```>>=```|Desplazamiento a la derecha con asignación|``` a >>= 2```|```a => 0b0011``` es 3 en decimal, ya que este operador desplaza los bits de la variable hacia la derecha por el número de posiciones especificado, llenando con ceros los bits más significativos (para enteros sin signo), y asigna el resultado a la variable.<br> ```>>``` es el operador sin operador de asignación|
 
     >[!NOTE] Adicionalmente hay un operador más &nbsp;<code> ~ </code>&nbsp; en las operaciones de bit que invierte los valores de los bit, es decir 0 -> 1 y 1 -> 0
 
@@ -291,18 +291,17 @@ Para los ejemplos se usara las siguientes variables:
 <br>
 
 * #### Comparación
-  
-    | Operador | Significado |Ejemplo|Resultado|
-    |:-:|:-:|:-:|:-|
-    |```==```|Igual a|```let a = 1```<br>```let b = 1```<br>```a == b```|```true```|
-    |```===```|Identico a|<b><small>[3](#subindice-3)</small></b>|```true```<br>```false```|
-    |```!=```|Diferente de| a != b|```false```|
-    |```!==```|NO identico a| <b><small>[4](#subindice-4)</small></b>|```true```|
-    |```~=```|Coincidencia de Patrones|<b><small>[5](#subindice-5)</small>|```true```|
-    |```>```|Mayor que|```5 > 10```|```false```|
-    |```<```|Menor que|```5 < 10```|```true```|
-    |```<=```|Menor o Igual que|```5 <= 10```|```true```|
-    |```>=```|Mayor o Igual que|```5 >= 10```|```false```|
+  | Operador | Significado |Ejemplo|Resultado|
+  |:-:|:-:|:-:|:-|
+  |```==```|Igual a|```let a = 1```<br>```let b = 1```<br>```a == b```|```true```|
+  |```===```|Identico a|<b><small>[3](#subindice-3)</small></b>|```true```<br>```false```|
+  |```!=```|Diferente de| a != b|```false```|
+  |```!==```|NO identico a| <b><small>[4](#subindice-4)</small></b>|```true```|
+  |```~=```|Coincidencia de Patrones|<b><small>[5](#subindice-5)</small>|```true```|
+  |```>```|Mayor que|```5 > 10```|```false```|
+  |```<```|Menor que|```5 < 10```|```true```|
+  |```<=```|Menor o Igual que|```5 <= 10```|```true```|
+  |```>=```|Mayor o Igual que|```5 >= 10```|```false```|
 
 
 <br>
@@ -385,7 +384,7 @@ Son pedazos de código que realizan cierta tarea; estas tienen un tipo de retorn
         ...
     }
 ``` 
->[!CAUTION] Swift es un lenguaje que te permite tener un &nbsp;<code>argumentLabel</code>&nbsp; _'Etiqueta de Argumento'_ que es con el que se mandará a llamar la función &nbsp;<code> parameterName </code>&nbsp; _'Nombre del parametro'_ que es con la que se trabaja dentro del cuerpo de la función
+[!CAUTION] Swift es un lenguaje que te permite tener un &nbsp;<code>argumentLabel</code>&nbsp; _'Etiqueta de Argumento'_ que es con el que se mandará a llamar la función &nbsp;<code> parameterName </code>&nbsp; _'Nombre del parametro'_ que es con la que se trabaja dentro del cuerpo de la función
 >``` swift
 >   func saludar(a nombre: String) 
 >   {
