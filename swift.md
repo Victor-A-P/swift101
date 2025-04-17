@@ -27,7 +27,7 @@ Las metas del lenguaje son:
 * Tener una sintaxis que se puede disfutar al leer y al escribir
   
 
-[(⬆) Inicio](#indice)
+[⬆ Inicio](#indice)
 
 
 ----------------------------------------------------------------------
@@ -259,11 +259,11 @@ Para los ejemplos se usara las siguientes variables:
   | Operador | Significado |Ejemplo|Resultado|
   |:-:|:-:|:-|:-|
   |```=```| Asignación|```let var1 = -10```||
-  |```+=```|Adicción|``````|``````|
-  |```-=```|Sustracción|``````|``````|
-  |```*=```|Multiplicación|``````|``````|
-  |```/=```|División|``````|``````|
-  |```%=```|Residuo|``````|``````|
+  |```+=```|Adicción|```var1 += 2```|```var1 => -8```|
+  |```-=```|Sustracción|```var1 -= 2```|```var1 => -12```|
+  |```*=```|Multiplicación|```var1 *= 2```|```var1 => -20```|
+  |```/=```|División|```var1 /= 2```|```var1 => -5```|
+  |```%=```|Residuo|```var1 % = 2```|```var1 => 0```|
 
     <br>
 
@@ -275,11 +275,11 @@ Para los ejemplos se usara las siguientes variables:
     ```
     | Operador | Significado |Ejemplo|Resultado|
     |:-:|:-:|:-|:-|
-    |```&=```|Operación AND|``````|``````|
-    |```\|=```|Operación OR|``````|``````|
-    |```^=```|Operación XOR|``````|``````|
-    |```<<=```|Desplazamiento a la izquierda con asignación|``````|``````|
-    |```>>=```|Desplazamiento a la derecha con asignación|``````|``````|
+    |```&=```|Operación AND|```a &= 0b1010```|```a => 0b1000``` es 8 en decimal, esto es porque en la operación AND solo los bits que estan activos en ambos operandos permanecen activos en el resultado|
+    |```\|=```|Operación OR|```a \|= 0b1010```|```a => 0b1110``` es 14 en decimal, esto porque en la operación OR los bits que estan activos en alguno de los operandos permanecen activos en el resultado|
+    |```^=```|Operación XOR|```a ^= 0b1010```|```a => 0b0110``` es 6 en decimal, esto porque el la operación XOR solo los bits que son diferentes entre los operandos se establecen como 1 en el resultado|
+    |```<<=```|Desplazamiento a la izquierda con asignación|```a = 0b0001 ``` <br>``` a <<= 2```|```a => 0b0100```|
+    |```>>=```|Desplazamiento a la derecha con asignación|``` a >>= 2```|```a => 0b0011```|
 
 
   
