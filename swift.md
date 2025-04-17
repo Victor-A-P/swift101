@@ -64,7 +64,7 @@ Las variables pueden ser declaradas sin inicializarlas <small>(sin asignarles un
 ```
 <br>
 
-[(⬆) Inicio](#indice)
+[⬆ Inicio](#indice)
 
 ----------------------------------------------------------------------
 
@@ -80,6 +80,8 @@ A diferencia de las variables, las <u>constantes</u> una vez que se les asigna u
 ```
 
 <br>
+
+[⬆ Inicio](#indice)
 
 ----------------------------------------------------------------------
 
@@ -118,13 +120,13 @@ A diferencia de las variables, las <u>constantes</u> una vez que se les asigna u
 
 * #### Tipos de Colección
 
-    * <b>Arrays</b>: Listas ordenadas de elementos del mismo tipo.
+    * <b>Arrays:</b> Listas ordenadas de elementos del mismo tipo.
     
     ``` swift
         var arr: [String] = ["Manzana", "Banana", "Cereza"]  
     ```
 
-    * <b>Diccionarios</b>: Colecciones de pares clave-valor, donde la clave y el valor son de tipos específicos.
+    * <b>Diccionarios:</b> Colecciones de pares clave-valor, donde la clave y el valor son de tipos específicos.
     
     ```swift
         var diccionario: [String: Int] = 
@@ -143,14 +145,14 @@ A diferencia de las variables, las <u>constantes</u> una vez que se les asigna u
 
 * #### Tipos Compuestos
 
-    * Tuplas: Agrupan varios valores en un solo valor compuesto.
+    * <b>Tuplas:</b> Agrupan varios valores en un solo valor compuesto.
     ``` swift
         // Tuplas: Agrupan varios valores en un solo tipo.
         let persona = (nombre: "Juan", edad: 25)  // Tupla con un String y un Int.
         print("Nombre: \(persona.nombre), Edad: \(persona.edad)")
     ```
 
-    * Enumeraciones (enum): Definen un conjunto de valores predefinidos y pueden tener valores asociados.
+    * <b>Enumeraciones (enum):</b>  Definen un conjunto de valores predefinidos y pueden tener valores asociados.
     ``` swift
         // Enumeraciones: Definen un conjunto de valores.
         enum Direccion {
@@ -162,7 +164,7 @@ A diferencia de las variables, las <u>constantes</u> una vez que se les asigna u
         let miDireccion: Direccion = .norte  // Se asigna un valor del enum 'Direccion'.
     ```
 
-    * Estructuras (struct): Permiten agrupar propiedades y métodos en un tipo de valor.
+    * <b>Estructuras (struct):</b> Permiten agrupar propiedades y métodos en un tipo de valor.
     ``` swift
         // Estructuras: Tipos de valor que agrupan datos y comportamientos.
         struct Punto 
@@ -175,7 +177,7 @@ A diferencia de las variables, las <u>constantes</u> una vez que se les asigna u
     ```
 
 
-    * Clases (class): Similar a las estructuras, pero son tipos por referencia y admiten herencia.
+    * <b>Clases (class):</b>  Similar a las estructuras, pero son tipos por referencia y admiten herencia.
 
     ``` swift
     // Clases: Tipos por referencia, que pueden heredar de otras clases.
@@ -194,7 +196,7 @@ A diferencia de las variables, las <u>constantes</u> una vez que se les asigna u
 
 * #### Otros
 
-    * Protocolos: Especifican un conjunto de métodos o propiedades que un tipo debe implementar.
+    * <b>Protocolos</b>: Especifican un conjunto de métodos o propiedades que un tipo debe implementar.
     ``` swift
         protocol Movible {
         func mover()  // Los tipos que adopten este protocolo deberán implementar 'mover'.
@@ -208,7 +210,7 @@ A diferencia de las variables, las <u>constantes</u> una vez que se les asigna u
         miCoche.mover()
     ```
 
-    * <u>Closures</u>: Bloques de código autoconclusivos que se pueden almacenar en variables o pasar como argumentos.
+    * <b>Closures</b>: Bloques de código autoconclusivos que se pueden almacenar en variables o pasar como argumentos.
 
     ``` swift
         let saludar = 
@@ -220,7 +222,7 @@ A diferencia de las variables, las <u>constantes</u> una vez que se les asigna u
 
     ```
 
-    * <u>Typealiases</u>: Permiten asignar un nuevo nombre a un tipo existente para mayor claridad.
+    * <b>Typealiases</b>: Permiten asignar un nuevo nombre a un tipo existente para mayor claridad.
 
     ``` swift
         typealias EnteroGrande = Int
@@ -228,7 +230,7 @@ A diferencia de las variables, las <u>constantes</u> una vez que se les asigna u
         print("Número grande: \(numeroGrande)")
     ```
 
-[(⬆) Inicio](#indice)
+[⬆ Inicio](#indice)
 
 
 
@@ -267,20 +269,21 @@ Para los ejemplos se usara las siguientes variables:
 
     <br>
 
-    Para operaciones en binario(bit)
+    Para operaciones con datos a nivel de bits, como en la criptografía o compresión de datos.
 
-    Se utiliza esta variable en los siguientes  operadores
+    Se utiliza esta variable en los siguientes operadores, a no ser que se cambie el valor en el ejemplo
     ``` swift
         var a = 0b1100  //
     ```
-    | Operador | Significado |Ejemplo|Resultado|
+    | Operador | Significado |  Ejemplo |Resultado|
     |:-:|:-:|:-|:-|
-    |```&=```|Operación AND|```a &= 0b1010```|```a => 0b1000``` es 8 en decimal, esto es porque en la operación AND solo los bits que estan activos en ambos operandos permanecen activos en el resultado|
-    |```\|=```|Operación OR|```a \|= 0b1010```|```a => 0b1110``` es 14 en decimal, esto porque en la operación OR los bits que estan activos en alguno de los operandos permanecen activos en el resultado|
-    |```^=```|Operación XOR|```a ^= 0b1010```|```a => 0b0110``` es 6 en decimal, esto porque el la operación XOR solo los bits que son diferentes entre los operandos se establecen como 1 en el resultado|
-    |```<<=```|Desplazamiento a la izquierda con asignación|```a = 0b0001 ``` <br>``` a <<= 2```|```a => 0b0100```|
-    |```>>=```|Desplazamiento a la derecha con asignación|``` a >>= 2```|```a => 0b0011```|
+    |```&=```|Operación AND|```a &= 0b1010```|```a => 0b1000``` es 8 en decimal, esto es porque en la operación AND solo los bits que estan activos en ambos operandos permanecen activos en el resultado.<br> ```&``` es el operador sin operador de asignación|
+    |```\|=```|Operación OR|```a \|= 0b1010```|```a => 0b1110``` es 14 en decimal, esto porque en la operación OR los bits que estan activos en alguno de los operandos permanecen activos en el resultado.<br> ```\|```  es el operador sin operador de asignación|
+    |```^=```|Operación XOR|```a ^= 0b1010```|```a => 0b0110``` es 6 en decimal, esto porque el la operación XOR solo los bits que son diferentes entre los operandos se establecen como 1 en el resultado.<br> ```^``` es el operador sin operador de asignación|
+    |```<<=```|Desplazamiento a la izquierda con asignación|```var a = 0b0001 ``` <br><br>``` a <<= 2```|```a => 0b0100``` es 4 en decimal, ya que este operador desplaza los bits de la variable hacia la izquierda por el número de posiciones especificado, llenando con ceros los bits menos significativos(a la derecha) y asigna el resultado de la variable.<br> ```<<``` es el operador sin operador de asignación|
+    |```>>=```|Desplazamiento a la derecha con asignación|``` a >>= 2```|```a => 0b0011``` es 3 en decimal, ya que este operador desplaza los bits de la variable hacia la derecha por el número de posiciones especificado, llenando con ceros los bits más significativos (para enteros sin signo), y asigna el resultado a la variable.<br> ```>>``` es el operador sin operador de asignación|
 
+    >[!NOTE] Adicionalmente hay un operador más &nbsp;<code> ~ </code>&nbsp; en las operaciones de bit que invierte los valores de los bit, es decir 0 -> 1 y 1 -> 0
 
   
  
@@ -288,9 +291,18 @@ Para los ejemplos se usara las siguientes variables:
 
 * #### Comparación
   
-    |```===```||``````|``````|
-    |```!=```||``````|``````|
-    |```!==```||``````|``````|
+    | Operador | Significado |Ejemplo|Resultado|
+    |:-:|:-:|:-:|:-|
+    |```==```|Igual a|```let a = 1```<br>```let b = 1```<br>```a == b```|```true```|
+    |```===```|Identico a|<b><small>[3](#subindice-3)</small></b>|```true```<br>```false```|
+    |```!=```|Diferente de| a != b|```false```|
+    |```!==```|NO identico a| <b><small>[4](#subindice-4)</small></b>|```true```|
+    |```~=```|Coincidencia de Patrones|<b><small>[5](#subindice-5)</small>|```true```|
+    |```>```|Mayor que|```5 > 10```|```false```|
+    |```<```|Menor que|```5 < 10```|```true```|
+    |```<=```|Menor o Igual que|```5 <= 10```|```true```|
+    |```>=```|Mayor o Igual que|```5 >= 10```|```false```|
+
 
 <br>
 
@@ -319,13 +331,74 @@ Son aquellos que cambian el signo de una variable(valor) numerica con solo un pr
 * #### Rango
   | Operador | Significado |Ejemplo|
   |:-:|:-:|:-|
-  |``````||``````|
+  |```a ... b```|Rango Cerrado|```1 ... 6``` va del 1 a 6 tomando en cuenta ambos limites como posibles valores|
+  |```a ..< b```|Rango<br>Semi-Abierto|```1 ..< 6``` va del 1 a 5 tomando en cuanta solo el 1 como posible valor|
+  |```..< b```<br>```a ... ```|Rango<br>Unilateral|``` ..< 3``` Este rango tendrá como valores cualquier número que se encuentre antes del 3 incluyendo valores negativos<br>```1 ... ``` Este rango tendra como valores cualquier número natural(0~...), &nbsp;<b>por ello es de suma importancia delimitar una condición cuando debe de acabar el rango</b> |
+
+
+* #### Desbordamiento
+  | Operador | Significado |Ejemplo|
+  |:-:|:-:|:-|
+  |```-&```|Substracción| <b><small>[6]()</small></b>|
+  |```+&```|Adicción| <b><small>[6]()</small></b>|
+
+``` swift
+    var willOverflow = UInt8.max
+    willOverflow = willOverflow &+ 1
+    // willOverflow equivale a 255, que es el valor maximo que UInt8 puede tener
+    // willOverflow usando el operador para truncar con seguridad en los bits disponibles; ahora vale 0
+
+    var willUnderflow = UInt8.min
+    willUnderflow = willUnderflow &- 1
+    // willUnderflow esquivale a 0 ya que es el valor minimo que puede tener
+    // willUnderflow usando el operador para truncar con seguridad en los bits disponibles; ahora vale 255
+```
 
 
 
-[(⬆) Inicio](#indice)
 
-----------------------------------------------------------------------
+* #### Valores Opcionales y Flujo del Programa
+    | Operador | Significado | Ejemplo |
+    |:------:|:---------:|:------|
+    |``` ?? ```|Fusión de Nulos|``` let nombreOpcional: String? = nil```<br>```let nombre = nombreOpcional ?? "Invitado"```<br>```print(nombre) // Imprime "Invitado"```<br>Permite proporcionar un valor <u>predeterminado</u> cuando un valor opcional es ```nil```|
+    |```?:```|Condicional Ternario|```let mensaje = edad >= 18 ? "Adulto" : "Menor"```<br>Permite realizar una evaluación condicional que devuelve uno de dos valores|
+    |```!```|Desempaquetado forzado|```let textoOpcional: String? = "Hola"```<br>```let texto = textoOpcional!```<br>Es utilizado para acceder al valor subyacente de un opcional que se sabe que no es ```nil```<br><small>*Es importante asegurarse de que el valor opcional no sea ```nil``` antes de usar ```!```, ya que de lo contrario el programa generará un error en tiempo de ejecución.</small>|
+    |```?.```|Encadenamiento opcional|<b>[]()</b><br>Este operador permite acceder a propiedades, métodos o subíndices de un valor opcional de forma segura. Si el valor opcional es nil, la expresión completa devuelve nil sin causar un error.|
+
+<br><br>
+
+
+>[!WARNING] En Swift el espacio que se deja antes y despues de un operador debe de ser el mismo, de lo contrario habrá un error
+
+<br>
+
+[⬆ Inicio](#indice)
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+### FUNCIONES
+Son pedazos de código que realizan cierta tarea; estas tienen un tipo de retorno, por lo tanto pueden ser usado como un valor usado en un argumento de otra función<br>&nbsp;Esta es la estructura básica de un función swift:
+``` swift
+    func functionName(argumentLabel parameterName: ArgumentType) -> ReturnType
+    {
+        ...
+    }
+``` 
+>[!CAUTION] Swift es un poco especialito y te permite tener un &nbsp;<code>argumentLabel</code>&nbsp; _'Etiqueta de Argumento'_ que es con el que se mandará a llamar la función &nbsp;<code> parameterName </code>&nbsp; <u>'Nombre del parametro'</u> que es con la que se trabaja dentro del cuerpo de la función
+>``` swift
+>   func saludar(a nombre: String) 
+>   {
+>       print("Hola, \(nombre)")
+>   }
+>
+>   saludar(a: "Carlos") // Imprime: Hola, Carlos
+>```
+
+<br>
+
+[⬆ Inicio](#indice)
+
+--------------------------------------------------------------------------------------------------------------------------------------------
 
 ### PIE DE PÁGINA
 
@@ -402,7 +475,9 @@ Son aquellos que cambian el signo de una variable(valor) numerica con solo un pr
 
 [↩ Regresar](#qué-es)
 
+[⬆ Inicio](#indice)
 
+----------------------------------------------------------------------
 <!-- ------------------------------------------------------ -->
 ###### Subindice [2]
 >[!NOTE] Un lenguaje de programación multiparadigma
@@ -424,12 +499,119 @@ Son aquellos que cambian el signo de una variable(valor) numerica con solo un pr
 
 
 [↩ Regresar](#qué-es)
+
+[⬆ Inicio](#indice)
+
+----------------------------------------------------------------------
+<!-- ------------------------------------------------------ -->
+###### Subindice [3]
+>[!NOTE] Esto es el ejemplo correspondiente al  operador &nbsp;<code>===</code>&nbsp; 'Identico a '
+>``` swift
+>   class Persona 
+>   {
+>    var nombre: String
+>    init(nombre: String) 
+>       {
+>           self.nombre = nombre
+>       }
+>   }
+>
+>   let persona1 = Persona(nombre: "Ana")
+>   let persona2 = persona1
+>   let persona3 = Persona(nombre: "Ana")
+>
+>   print(persona1 === persona2) // true
+>   print(persona1 === persona3) // false
+>```
+>Esto es ya que este operador verifica si dos referencias de objetos apuntan a la misma instancia en memoria. 
+
+[↩ Regresar](#comparación)
+
+[⬆ Inicio](#indice)
+
+----------------------------------------------------------------------
+<!-- ------------------------------------------------------ -->
+###### Subindice [4]
+>[!NOTE] Esto es el ejemplo correspondiente al  operador &nbsp;<code>!==</code>&nbsp; 'NO Identico a '
+> Para este ejemplo se toma la clase declarada en el <b><small>[Subindice 4](#subindice-4)</small></b> 
+>``` swift
+>   print(persona1 !== persona3) // true
+>```
+>Esto es ya que determina si dos referencias de objetos no apuntan a la misma instancia.​
+
+
+[↩ Regresar](#comparación)
+
+[⬆ Inicio](#indice)
+
+----------------------------------------------------------------------
+<!-- ------------------------------------------------------ -->
+###### Subindice [5]
+>[!NOTE] Esto es el ejemplo correspondiente al  operador &nbsp;<code> ~= </code>&nbsp; 'Coincidencia de patrones'
+>Devuelve un valor booleano que indica si dos argumentos coinciden por igualdad de valor<br>
+>``` swift
+>    func ~= <T>(a: T, b: T) -> Bool where T : Equatable
+>``` 
+><br>*Equatable => Igualable, Equivalente
+>
+>```swift
+>   func esDiaLaboral(diaSemana: Int) -> Bool 
+>    {
+>        return 1...5 ~= diaSemana
+>    }
+>
+>    let dia = 1
+>    if esDiaLaboral(diaSemana: dia) 
+>    {
+>        print("Es un día laboral")
+>    }else
+>        {
+>            print("Es fin de semana")
+>        }
+>```
+> En este ejemplo el ```dia``` usa este operador para probar si el ```diaSemana```  es igual a algún valor del rango <br>
+
+
+
+[↩ Regresar](#comparación)
+
+[⬆ Inicio](#indice)
+
+----------------------------------------------------------------------
+<!-- ------------------------------------------------------ -->
+###### Subindice [6]
+>[!NOTE] Ejemplo correspondiente al operador &nbsp;<code> ?. </code>&nbsp; 'Encadenamiento opcional'
+>
+>``` swift
+>   class Persona 
+>    {
+>        var nombre: String
+>        init(nombre: String) 
+>        {
+>            self.nombre = nombre
+>        }
+>    }
+>
+>    var persona: Persona? = Persona(nombre: "Ana")
+>    print(persona?.nombre) // Imprime "Optional(\"Ana\")"
+>
+>```
+>En este caso, ```persona?.nombre``` accede a la propiedad nombre solo si persona no es ```nil```. Si persona fuera ```nil```, la expresión completa devolvería ```nil```.​
+
+>[!NOTE] <code>?.</code>(Encadenamiento Opcional) != <code>?</code>(Variable Opcional)
+
+
+
+
+[↩ Regresar](#valores-opcionales-y-flujo-del-programa)
+
+[⬆ Inicio](#indice)
+
+----------------------------------------------------------------------
 <!-- ------------------------------------------------------ -->
 ###### Subindice []
 >[!NOTE] 
 >
 [↩ Regresar]()
 
-[(⬆) Inicio](#indice)
-
-[↩ Regresar]()
+[⬆ Inicio](#indice)
