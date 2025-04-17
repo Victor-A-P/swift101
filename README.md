@@ -35,7 +35,8 @@ Las metas del lenguaje son:
 ### Variables
 
 En Swift es posible asociar valores con un nombre, definiendolo como una variable y asignandole un valor. Este mismo nombre puede ser usado para referirse al valor a lo largo del programa
->[!TIP] Las variables son &nbsp;<u><b>mutables</b></u>&nbsp; lo que significa que puede ser cambiado en cualquier momento
+>[!TIP] 
+>Las variables son &nbsp;<u><b>mutables</b></u>&nbsp; lo que significa que puede ser cambiado en cualquier momento
 
 Las variables en Swift se definen con la palabra clave ```var```
 
@@ -44,7 +45,8 @@ Las variables en Swift se definen con la palabra clave ```var```
     var imoVar : Int = 12; //variable explicita ya que se indica que es int; 
 ```
 
->[!NOTE] Swift es un lenguaje "&nbsp;type-safe&nbsp; "
+>[!NOTE] 
+> Swift es un lenguaje "&nbsp;type-safe&nbsp; "
 > Es decir que es un lenguaje tipado estaticamente seguro, lo que significa que todos los valores tienen un "tipo" al momento que se compila y se puede declarar estas explicitamente o dejar que el compilador infiera el tipo; de tal manera que el "tipo" de la varible se fija una vez es definida.
 
 ``` swift
