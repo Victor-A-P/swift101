@@ -1,5 +1,11 @@
-# swift101
-This is a repository mainly for me to upload the notes(that you can find [here](./swift.md) I did in markdown of the topic in Spanish while I was studying the topic that 
+# Swift101
+
+<br>
+
+This is a repository mainly for me to upload the notes I did in markdown of the topic in Spanish while I was studying the topic
+
+<br>
+
 -----------------------------------------------------------------------
 ## INDICE
 * [**¿Qué es?**](#qué-es)<br>
@@ -366,7 +372,7 @@ Son aquellos que cambian el signo de una variable(valor) numerica con solo un pr
     |``` ?? ```|Fusión de Nulos|``` let nombreOpcional: String? = nil```<br>```let nombre = nombreOpcional ?? "Invitado"```<br>```print(nombre) // Imprime "Invitado"```<br>Permite proporcionar un valor <u>predeterminado</u> cuando un valor opcional es ```nil```|
     |```?:```|Condicional Ternario|```let mensaje = edad >= 18 ? "Adulto" : "Menor"```<br>Permite realizar una evaluación condicional que devuelve uno de dos valores|
     |```!```|Desempaquetado forzado|```let textoOpcional: String? = "Hola"```<br>```let texto = textoOpcional!```<br>Es utilizado para acceder al valor subyacente de un opcional que se sabe que no es ```nil```<br><small>*Es importante asegurarse de que el valor opcional no sea ```nil``` antes de usar ```!```, ya que de lo contrario el programa generará un error en tiempo de ejecución.</small>|
-    |```?.```|Encadenamiento opcional|<b>[]()</b><br>Este operador permite acceder a propiedades, métodos o subíndices de un valor opcional de forma segura. Si el valor opcional es nil, la expresión completa devuelve nil sin causar un error.|
+    |```?.```|Encadenamiento opcional|<b>[6](#subindice-6)</b><br>Este operador permite acceder a propiedades, métodos o subíndices de un valor opcional de forma segura. Si el valor opcional es nil, la expresión completa devuelve nil sin causar un error.|
 
 <br><br>
 
@@ -390,6 +396,9 @@ Son pedazos de código que realizan cierta tarea; estas tienen un tipo de retorn
 ``` 
 [!CAUTION] 
 > Swift es un lenguaje que te permite tener un &nbsp;<code>argumentLabel</code>&nbsp; _'Etiqueta de Argumento'_ que es con el que se mandará a llamar la función &nbsp;<code> parameterName </code>&nbsp; _'Nombre del parametro'_ que es con la que se trabaja dentro del cuerpo de la función
+>
+><br>
+> 
 >``` swift
 >   func saludar(a nombre: String) 
 >   {
@@ -609,7 +618,41 @@ Son pedazos de código que realizan cierta tarea; estas tienen un tipo de retorn
 >```
 >En este caso, ```persona?.nombre``` accede a la propiedad nombre solo si persona no es ```nil```. Si persona fuera ```nil```, la expresión completa devolvería ```nil```.​
 
->[!NOTE] <code>?.</code>(Encadenamiento Opcional) != <code>?</code>(Variable Opcional)
+>[!CAUTION] 
+> <code>?.</code>(Encadenamiento Opcional) != <code>?</code>(Variable Opcional)
+>
+> La **_Variable Opcional_** es aquella que puede contener un valor de un tipo específico o <code>nil</code>. Se declara utilizando el signo de interrogación (?) después del tipo.
+>``` swift
+>    var nombre: String? = "Carlos"
+>```
+><br>
+>
+> El **_Encadenamiento Opcional_** se utiliza para acceder a propiedades, métodos o subíndices de una instancia que podría ser <code>nil</code>. Si la instancia es <code>nil</code>, la llamada retorna <code>nil</code> sin causar un error.
+> ``` swift
+>class Persona 
+>    {
+>        var direccion: Direccion?
+>    }
+>    
+>    class Direccion 
+>    {
+>        var ciudad: String = "Madrid"
+>    }
+>    
+>    let persona = Persona()
+>    persona.direccion = Direccion()
+>    
+>    if let ciudad = persona.direccion?.ciudad 
+>    {
+>        print("La ciudad es \(ciudad)")
+>    }else
+>       {
+>           print("No se pudo obtener la ciudad")
+>       }
+>```
+>En este ejemplo, ```persona.direccion?.ciudad``` intenta acceder a la propiedad ciudad de direccion solo si direccion no es ```nil```. Si direccion es ```nil```, la expresión completa retorna ```nil```.​
+
+
 
 
 
