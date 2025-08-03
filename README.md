@@ -2,30 +2,45 @@
 
 <br>
 
-This is a repository mainly for me to upload the notes I did in markdown of the topic in Spanish while I was studying the topic
+This is a repository mainly for me to upload the notes I did in markdown of the topic in Spanish while I was studying the topic i dont know if it works in real time??  
 
 <br>
 
 -----------------------------------------------------------------------
 ## INDICE
-* [**¿Qué es?**](#qué-es)<br>
+* [**¿Qué es?**](#qué-es-swift)<br>
 * [**Variables**](#variables)<br>
 * [**Constantes**](#constantes)<br>
 * [**Tipos en Swift**](#tipos-en-swift)<br>
   * [Tipos Básicos](#tipos-básicos)<br> 
-  * []()<br> 
-  * []()<br> 
-  * []()<br> 
-  * 
+  * [Tipos de Colección](#tipos-de-colección)<br> 
+  * [Tipos Comppuestos](#tipos-compuestos)<br> 
+  * [Otros](#otros)<br> 
+  
 * [**Operadores**](#operadores)<br>
-  * []()<br> 
-  * []()<br> 
-  * 
+  * [Aritméticos](#aritmeticos)<br> 
+  * [Asignación](#aritmeticos)<br> 
+  * [Comparación](#comparación)<br> 
+  * [Unitarios](#unitarios)<br> 
+  * [Lógicos](#lógicos)<br>  
+  * [Rango](#rango)<br>
+  * [Desbordamiento](#desbordamiento)<br> 
+  * [Valores Opcionales y flujo del programa](#valores-opcionales-y-flujo-del-programa)<br> 
+  
+* [**Funciones**](#funciones)<br>
+  * [Funciones de Orden Superior](#de-orden-superior)<br> 
+  
+* [**<code>&nbsp;Extension&nbsp;</code>**](#extension)<br>
+* [**<code>&nbsp;Delegate&nbsp;</code>**](#delegate )<br>
+* [**Trabajando sin Storyboard**](#trabajando-sin-storyboard)<br>
+* [**Ciclo de vida de <code>UIViewController</code>**](#ciclo-de-vida-del-uiviewcontroller)<br>
 * [****]()<br>
-* 
+* [**Pie de Página**](#pie-de-página)<br>
+
+ 
   
 ----------------------------------------------------------------------
-### ¿Qué es?
+### ¿QUÉ ES SWIFT?
 
 Es un lenguaje que es compilado <sub><b>[1](#subindice-1)</b></sub> que tambien es multiparadigma <sub><b>[2](#subindice-2)</b></sub> desarrollado por Apple como un remplazo de <u>Objective-C</u><br><br>
 Las metas del lenguaje son:
@@ -38,7 +53,7 @@ Las metas del lenguaje son:
 
 
 ----------------------------------------------------------------------
-### Variables
+### VARIABLES
 
 En Swift es posible asociar valores con un nombre, definiendolo como una variable y asignandole un valor. Este mismo nombre puede ser usado para referirse al valor a lo largo del programa
 >[!TIP] 
@@ -77,7 +92,7 @@ Las variables pueden ser declaradas sin inicializarlas <small>(sin asignarles un
 
 ----------------------------------------------------------------------
 
-### Constantes
+### CONSTANTES
 
 <br>
 
@@ -94,7 +109,7 @@ A diferencia de las variables, las <u>constantes</u> una vez que se les asigna u
 
 ----------------------------------------------------------------------
 
-### Tipos en Swift
+### <CODE>TYPES</CODE> EN SWIFT
 
 <br>
 
@@ -122,10 +137,12 @@ A diferencia de las variables, las <u>constantes</u> una vez que se les asigna u
         var caracter: Character = "A"   
     ```
 
-    * <b>Opcionales</b>: Cualquier tipo puede ser opcional (por ejemplo, Int? o String?), lo que indica que la variable puede no tener valor ```nil```.
+    * <b>Opcionales</b>: Cualquier tipo puede ser opcional (por ejemplo, Int? o String?), lo que indica que la variable puede no tener valor ```nil``` <b><small>[3](#subindice-3)</small></b>.
     ``` swift
         var numeroOpcional: Int? = nil
     ```
+
+
 
 * #### Tipos de Colección
 
@@ -152,7 +169,8 @@ A diferencia de las variables, las <u>constantes</u> una vez que se les asigna u
         var conjunto: Set<Int> = [1, 2, 3, 3]   // Set de Ints (valores únicos).
   ```
 
-* #### Tipos Compuestos
+* #### Tipos Compuestos 
+    * <b>SON VALUE TYPES</b>
 
     * <b>Tuplas:</b> Agrupan varios valores en un solo valor compuesto.
     ``` swift
@@ -185,7 +203,7 @@ A diferencia de las variables, las <u>constantes</u> una vez que se les asigna u
         print("Punto en (\(punto.x), \(punto.y))")
     ```
 
-
+    * <b>ES REFERENCE TYPES</b><small><b>()[]</b></small>
     * <b>Clases (class):</b>  Similar a las estructuras, pero son tipos por referencia y admiten herencia.
 
     ``` swift
@@ -219,7 +237,13 @@ A diferencia de las variables, las <u>constantes</u> una vez que se les asigna u
         miCoche.mover()
     ```
 
-    * <b>Closures</b>: Bloques de código autoconclusivos que se pueden almacenar en variables o pasar como argumentos.
+    * <b>Closures</b>: Bloques de código autoconclusivos que pueden:
+      *  Almacenar en variables o pasar como argumentos.
+      *  Asignado a una variable o constante.
+      *  Pasado como argumento a una función.
+      *  Retornado desde una función.​<br>
+  
+    Los closures pueden capturar y almacenar referencias a variables y constantes del contexto en el que se definen.
 
     ``` swift
         let saludar = 
@@ -241,12 +265,11 @@ A diferencia de las variables, las <u>constantes</u> una vez que se les asigna u
 
 [⬆ Inicio](#indice)
 
-
-
+<br>
 
 ----------------------------------------------------------------------
 
-### Operadores
+### OPERADORES
 
 Para los ejemplos se usara las siguientes variables:
 
@@ -263,6 +286,15 @@ Para los ejemplos se usara las siguientes variables:
   |```*```|Multiplicación|```var1 * var2```|
   |```/```|División|```var1 / var2```|
   |```%```|Residuo<br>Mod|```var1 % var2```|
+
+
+>[!NOTE]
+> Para las operaciones no es posible realizar operaciones entre distintos tipos por ello hay veces que es necesario hacer la converción
+> Ej.
+>``` swift
+>   var i: Int = 10
+>   var i2:Double = Double(i) 
+>```
 
 <br>
 
@@ -292,8 +324,8 @@ Para los ejemplos se usara las siguientes variables:
   |```<<=```|Desplazamiento a la izquierda con asignación|```var a = 0b0001 ``` <br><br>``` a <<= 2```|```a => 0b0100``` es 4 en decimal, ya que este operador desplaza los bits de la variable hacia la izquierda por el número de posiciones especificado, llenando con ceros los bits menos significativos(a la derecha) y asigna el resultado de la variable.<br> ```<<``` es el operador sin operador de asignación|
   |```>>=```|Desplazamiento a la derecha con asignación|``` a >>= 2```|```a => 0b0011``` es 3 en decimal, ya que este operador desplaza los bits de la variable hacia la derecha por el número de posiciones especificado, llenando con ceros los bits más significativos (para enteros sin signo), y asigna el resultado a la variable.<br> ```>>``` es el operador sin operador de asignación|
 
-    >[!NOTE] 
-    > Adicionalmente hay un operador más &nbsp;<code> ~ </code>&nbsp; en las operaciones de bit que invierte los valores de los bit, es decir 0 -> 1 y 1 -> 0
+>[!NOTE] 
+> Adicionalmente hay un operador más &nbsp;<code> ~ </code>&nbsp; en las operaciones de bit que invierte los valores de los bit, es decir 0 -> 1 y 1 -> 0
 
   
  
@@ -303,10 +335,10 @@ Para los ejemplos se usara las siguientes variables:
   | Operador | Significado |Ejemplo|Resultado|
   |:-:|:-:|:-:|:-|
   |```==```|Igual a|```let a = 1```<br>```let b = 1```<br>```a == b```|```true```|
-  |```===```|Identico a|<b><small>[3](#subindice-3)</small></b>|```true```<br>```false```|
+  |```===```|Identico a|<b><small>[4](#subindice-4)</small></b>|```true```<br>```false```|
   |```!=```|Diferente de| a != b|```false```|
-  |```!==```|NO identico a| <b><small>[4](#subindice-4)</small></b>|```true```|
-  |```~=```|Coincidencia de Patrones|<b><small>[5](#subindice-5)</small>|```true```|
+  |```!==```|NO identico a| <b><small>[5](#subindice-5)</small></b>|```true```|
+  |```~=```|Coincidencia de Patrones|<b><small>[6](#subindice-6)</small>|```true```|
   |```>```|Mayor que|```5 > 10```|```false```|
   |```<```|Menor que|```5 < 10```|```true```|
   |```<=```|Menor o Igual que|```5 <= 10```|```true```|
@@ -348,22 +380,10 @@ Son aquellos que cambian el signo de una variable(valor) numerica con solo un pr
 * #### Desbordamiento
   | Operador | Significado |Ejemplo|
   |:-:|:-:|:-|
-  |```-&```|Substracción| <b><small>[6]()</small></b>|
-  |```+&```|Adicción| <b><small>[6]()</small></b>|
+  |```-&```|Substracción| <b><small>[7](#subindice-7)</small></b>|
+  |```+&```|Adicción| <b><small>[7](#subindice-7)</small></b>|
 
-``` swift
-    var willOverflow = UInt8.max
-    willOverflow = willOverflow &+ 1
-    // willOverflow equivale a 255, que es el valor maximo que UInt8 puede tener
-    // willOverflow usando el operador para truncar con seguridad en los bits disponibles; ahora vale 0
-
-    var willUnderflow = UInt8.min
-    willUnderflow = willUnderflow &- 1
-    // willUnderflow esquivale a 0 ya que es el valor minimo que puede tener
-    // willUnderflow usando el operador para truncar con seguridad en los bits disponibles; ahora vale 255
-```
-
-
+<br>
 
 
 * #### Valores Opcionales y Flujo del Programa
@@ -372,7 +392,7 @@ Son aquellos que cambian el signo de una variable(valor) numerica con solo un pr
     |``` ?? ```|Fusión de Nulos|``` let nombreOpcional: String? = nil```<br>```let nombre = nombreOpcional ?? "Invitado"```<br>```print(nombre) // Imprime "Invitado"```<br>Permite proporcionar un valor <u>predeterminado</u> cuando un valor opcional es ```nil```|
     |```?:```|Condicional Ternario|```let mensaje = edad >= 18 ? "Adulto" : "Menor"```<br>Permite realizar una evaluación condicional que devuelve uno de dos valores|
     |```!```|Desempaquetado forzado|```let textoOpcional: String? = "Hola"```<br>```let texto = textoOpcional!```<br>Es utilizado para acceder al valor subyacente de un opcional que se sabe que no es ```nil```<br><small>*Es importante asegurarse de que el valor opcional no sea ```nil``` antes de usar ```!```, ya que de lo contrario el programa generará un error en tiempo de ejecución.</small>|
-    |```?.```|Encadenamiento opcional|<b>[6](#subindice-6)</b><br>Este operador permite acceder a propiedades, métodos o subíndices de un valor opcional de forma segura. Si el valor opcional es nil, la expresión completa devuelve nil sin causar un error.|
+    |```?.```|Encadenamiento opcional|<b>[8](#subindice-8)</b><br>Este operador permite acceder a propiedades, métodos o subíndices de un valor opcional de forma segura. Si el valor opcional es nil, la expresión completa devuelve nil sin causar un error.|
 
 <br><br>
 
@@ -394,8 +414,11 @@ Son pedazos de código que realizan cierta tarea; estas tienen un tipo de retorn
         ...
     }
 ``` 
-[!CAUTION] 
-> Swift es un lenguaje que te permite tener un &nbsp;<code>argumentLabel</code>&nbsp; _'Etiqueta de Argumento'_ que es con el que se mandará a llamar la función &nbsp;<code> parameterName </code>&nbsp; _'Nombre del parametro'_ que es con la que se trabaja dentro del cuerpo de la función
+<small>Esto es llamado _function signature_</small>
+<br>
+
+>[!CAUTION] 
+> Swift es un lenguaje que te permite tener un &nbsp;<code>argumentLabel</code>&nbsp; _'Etiqueta de Argumento'_ que es con el que se mandará a llamar la función para que ayude a ser más facil de leer &nbsp;<code> parameterName </code>&nbsp; _'Nombre del parametro'_ que es con la que se trabaja dentro del cuerpo de la función
 >
 ><br>
 > 
@@ -410,7 +433,465 @@ Son pedazos de código que realizan cierta tarea; estas tienen un tipo de retorn
 
 <br>
 
+#### <b><u>De Orden Superior</u></b>
+​Las <u>**funciones de orden superior**</u> son aquellas que pueden recibir otras funciones como argumentos o devolver funciones como resultado. Este concepto es fundamental en la programación funcional y permite escribir código más flexible y reutilizable.​<br>
+Cumplen con las siguientes condiciones:<br>
+
+* Toma una o más funciones como entrada
+``` swift
+    func aplicarTresVeces(operación funcion: (Int) -> Int, a valor: Int) -> Int 
+    {
+        return funcion(funcion(funcion(valor)))
+    }
+
+    func incrementar(_ x: Int) -> Int 
+    {
+        return x + 1
+    }
+
+    let resultado = aplicarTresVeces(operación: incrementar, a: 5)
+    print(resultado) // Imprime: 8
+```
+<br>
+
+<small>En este ejemplo, ```aplicarTresVeces``` es una <u>_función de orden superior_</u> que recibe otra función ```incrementar``` y un valor ```a```, aplicando la función tres veces al valor. => 5 <sup><small>+1</small> <small>+1</small> <small>+1</small></sup> = 8</small>
+* Devuelve una función como salida.
+``` swift
+    func crearMultiplicador(por factor: Int) -> (Int) -> Int 
+    {
+        return 
+        { 
+            numero in
+            return numero * factor
+        }
+    }
+
+    let porCinco = crearMultiplicador(por: 5)
+    print(porCinco(3)) // Imprime: 15
+
+    let porSeis = crearMultiplicador(por: 6)
+    print(porSeis(3)) // Imprime: 18
+```
+<br>
+
+<small>Aquí, ```crearMultiplicador``` devuelve una nueva función que multiplica su entrada por el ```factor``` especificado</small>
+<br><br>
+
+Esto significa que las funciones se tratan como valores de primera clase, lo que permite pasarlas como argumentos, asignarlas a variables o retornarlas desde otras funciones
+
+<br><br>
+
 [⬆ Inicio](#indice)
+
+
+<br>
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+### ```extension```
+
+Conocidas en español como -> (Extensiones)
+ 
+Permite agregar nuevas funcionalidades a una clase, estructura, enumeración o protocolo existente, sin modificar su implementación original. Esto es especialmente útil cuando no tienes acceso al código fuente original o deseas mantener tu código organizado y modular.<br>
+
+``` swift
+    extension Date 
+    {
+        func agregarDias(_ dias: Int) -> Date 
+        {
+            Calendar.current.date(byAdding: .day, value: dias, to: self)!
+        }
+    }
+
+
+    let hoy = Date()
+    let proximaSemana = hoy.agregarDias(7)
+    print(proximaSemana)
+```
+Ahora todas las ```Date``` nuevas que se generen podrán hacer uso de esta función(Sumar 'n' dias a la fecha que se desee) ya que se ha hecho una extención del tipo ```Date```
+
+<br>
+
+``` swift
+    extension String
+    {
+        func removeWhiteSpaces() -> String
+        {
+            return components(separatedBy: .whitespaces).joined()
+        } 
+    }
+
+    let texto = "  H o l a  m u n d o  "
+    print(texto.removeWhiteSpaces())
+```
+Esta extension realizada a los tipo ```Strin g``` nos permite eliminar cualquier espacio de una cadena y te la regresa sin estos
+<br><br>
+
+[⬆ Inicio](#indice)
+
+
+<br>
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+### ```Delegate```
+
+Conocidas en español como -> (Delegados)<br>
+
+En Swift es un patron de diseño que permite que un objeto ceda(delegue) parte de su comportamiento a otro objeto.<br>
+Este patrón es ampliamente utilizado en UIKit, especialmente al trabajar con ```UITableView```
+
+#### ¿Qué es un <u>_Delegate_</u>?
+Es un objeto que actúa en nombre de, o en coordinación con otro objeto.<br>En el contexto de un ```UITableView```, el <u>_delegate_</u> responde a eventos que estan relacionados con la presentación e interacción del usuario como:
+* La selección de celdas
+* La edición
+* El desplazamiento
+* etc.
+
+#### ¿Por qué usar <u>_Delegates_</u>?
+* <u>Separación de responsabilidades:</u> Permite que la ```UITableView``` se enfoque en mostrar datos, mientras que el delegate maneja la <u>lógica de interacción</u>.
+
+* <u>Reutilización de código:</u> Puedes utilizar el mismo delegate para múltiples tablas si comparten comportamientos similares.
+
+* <u>Flexibilidad:</u> Facilita la personalización del comportamiento de componentes estándar sin necesidad de subclasificarlos.
+
+>[!NOTE]
+>
+> <code>UITableViewDelegate</code> y <code>UITableDataSource</code> <br>
+> Cuando se trabaja con una <code>UITableView</code>, generalmente se necesita establecer 2 objetos:
+>* <code>dataSource</code> : Proporciona los datos que se mostrarán en la tabla.
+>* <code>delegate</code> : Gestiona la <u>apariencia</u> y <u>comportamiento</u> de la tabla.<br><br>
+> <small>Ambos deben de crearse conforme a los protocolos <code>UITableDataSource</code> y <code>UITableViewDelegate</code> respectivamente</small>
+
+``` swift
+class somethingViewController: UIViewController, UITableViewDelegate, UITableViewDataSource 
+{
+    @IBOutlet weak var tableView: UITableView!
+
+    override func viewDidLoad() 
+    {
+        super.viewDidLoad()
+        tableView.delegate = self
+        tableView.dataSource = self
+    }
+
+    // Métodos del dataSource
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int 
+    {
+        return 10 // Número de filas
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell 
+    {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Celda", for: indexPath)
+        cell.textLabel?.text = "Fila \(indexPath.row)"
+        return cell
+    }
+
+    // Método del delegate
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) 
+    {
+        print("Seleccionaste la fila \(indexPath.row)")
+    }
+}
+
+
+```
+
+[⬆ Inicio](#indice)
+
+
+<br>
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+### TRABAJANDO SIN STORYBOARD
+
+>[!IMPORTANT]
+>Se debe de recordar eliminar las referencias al storyboard ```.main``` despues de eliminar el archivo en las configuraciones del proyecto, de lo contrario el projecto no funcionará al intentar compilarlo ya que seguirá buscando dicho archivo
+
+En iOS 13+ con soporte de múltiples ventanas  <u><b>_(scenes)_</b></u>, el ```SceneDelegate``` reemplaza (o complementa) muchas de las tareas que antes hacía el ```AppDelegate```.<br><br> Su responsabilidad principal es <u>crear y configurar el objeto ```UIWindow```</u> de tu aplicación de forma programática (cuando no usas storyboard) y asignarle un controlador raíz ```rootViewController```.<br><br>
+Puntos a recordar: 
+* ```UIWindowSceneDelegate``` Es un protocolo que extiende a ```UISceneDelegate``` para manejar la _'vida-ciclo'_ de una ventana en concreto
+* ```UIWindowScene``` Representa una instancia de interfaz de usuario(una ```scene```), que puede contener una o varias ventanas
+* Sin Storyboard: Ya que no se desea usar storyboard (interfaz visual), nosotros mismos creamos y configuramos la ```UIWindow``` en código.<br><br>
+
+<b>A continuación se desgloza parte del código de ```SceneDelegate.swift``` :</b><br><br>
+El método ```_scene: ,willConnectTo: ,options:``` es el que se llama cuando una nueva escena está a punto de mostrarse; ahí se debe de inicializar la ventana, que se “conecta” a la escena que el sistema te entrega
+
+``` swift
+    func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions)
+    { ... }
+```
+<br>
+
+1. ``` swift
+        // Asegurarse de que la scene sea del tipo UIWindowScene
+        guard let windowScene = (scene as? UIWindowScene) else { return }   
+    ```
+    Comprueba que el objeto scene que el sistema pasa sea en realidad un UIWindowScene. Si no lo es, sale del método sin hacer nada.
+<br><br>
+   
+2. ``` swift
+    // Crear la ventana con el tamaño de la pantalla de la scene
+    window = UIWindow(frame: windowScene.coordinateSpace.bounds)
+   ```
+
+    Esta linea se encarga de inicializar ```window``` con el tamaño completo de la pantalla que corresponde a la ```windowScene```. <br><br>
+    ```coordinateSpace.bounds``` devuelve las dimensiones (ancho y alto) de esa ```scene```. Esto equivale a “coger todo el área de la pantalla donde la app va a correr”.
+
+3. ``` swift
+        // Conectar la window a la scene
+        window?.windowScene = windowScene
+   ```
+      
+    Esta linea se encarga de asociar la ```UIWindow``` recién creada con la ```UIWindowScene``` que administra el sistema. Y esto es necesario porque en el ciclo de vida de escenas, cada ventana debe “pertenecer” a una ```scene```; de otro modo nunca aparecería. 
+
+
+
+4. ``` swift 
+    // Definir el controlador raíz (la primera pantalla)
+    window?.rootViewController = CardSelectionVC()
+   ```
+   Esta linea establece la instancia de ```CardSelectionVC``` (la pantalla inicial) como controlador principal de la ventana.
+
+    >[!IMPORTANT]
+    >El <code>rootViewController</code> es el punto de partida de la jerarquía de vistas. Desde ahí se presentarán demás pantallas o navegaciones
+
+5. ```swift 
+    // Hacer la ventana “key” y visible en pantalla
+    window?.makeKeyAndVisible()
+   ``` 
+   Sin esta llamada, la ventana existe en memoria pero no aparece ni interactúa.
+
+   * ```makeKey``` convierte esta ventana en la “key window”, la que recibe interacciones de usuario.
+
+   * ```makeVisible``` la muestra en pantalla.
+
+
+
+[⬆ Inicio](#indice)
+
+
+<br>
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+### CICLO DE VIDA DE UNA ESCENA
+
+Como se menciono anteriormente en iOS 13 ```SceneDelegate``` ahora gestiona el ciclo de vida de cada <u><b>_escena_</b></u>; Los métodos a continuación se llaman en momentos clave según la transición de la escena entre sus diferntes estados<br> 
+   
+   * Activa
+   * Inactiva 
+   * Primer Plano
+   * Fondo
+   * Desconectada <br>
+
+   Y normalmente son utilizados para:
+   * Gestionar recursos
+   * Guardar un estado
+   * Reanudar tareas de forma especifíca al contexto de la escena
+
+<br><br>
+
+#### Metodos del ciclo de Vida
+
+* ```sceneDidDisconnect(_:)```
+  
+    Se invoca cuando la escena se ha desconectado y ya no se usa para mostrar la interfaz de usuario. Esto puede ocurrir poco después de que la escena entra en segundo plano o cuando el sistema descarta su sesión.
+
+    * Se usa este método para liberar recursos asociados a la escena (archivos, observadores, conexiones a bases de datos) que puedan recrearse la próxima vez que la escena se conecte 
+    * Es importante recordar que aunque la sesión no se haya descartado del todo, la escena sí puede reenchufarse más tarde; por ello, guarda o invalida solo lo estrictamente necesario
+  
+ 
+* ```sceneDidBecomeActive(_:)```
+  
+    Se llama cuando la escena pasa de un estado inactivo → activo, es decir, ya está en primer plano y recibiendo eventos.
+
+    * Ideal para reanudar tareas pausadas, como animaciones, reproducción de audio o timers detenidos en el método de resignación 
+    * No deberías iniciar aquí cargas de datos pesadas (puede ralentizar la presentación); úsalo para pequeñas reanudaciones de UI o lógica relacionada con la interacción del usuario
+
+* ```sceneWillResignActive(_:)```
+  
+    Este método se ejecuta justo antes de que la escena vaya de activa a inactiva, por ejemplo, cuando el usuario recibe una llamada o abre el Centro de Control
+
+    * Detén temporizadores y pausar animaciones que no deban continuar en segundo plano 
+    * Puedes guardar datos de usuario si tu escena está manejando entrada activa, pero no confíes únicamente en este método para guardar todo lo crítico (mejor hazlo en respuesta a acciones concretas del usuario)
+  
+* ```sceneWillEnterForeground(_:)```
+  
+    Se invoca cuando la escena está a punto de regresar al primer plano tras haber estado en segundo plano.
+
+    * Des-haz los cambios realizados al entrar en fondo: restablece la UI, vuelve a registrar observadores o reactiva servicios deshabilitados
+    * Aprovecha para actualizar la interfaz con datos frescos si tu app pudo haber cambiado mientras estaba en segundo plano
+  
+* ```sceneDidEnterBackground(_:)```
+  
+    Se llama cuando la escena completa la transición al fondo
+
+    * Guarda el estado de la aplicación y libera recursos compartidos (bases de datos, conexiones de red) para que iOS pueda gestionar mejor la memoria 
+    * Este es el lugar adecuado para persistir los datos del usuario y la configuración de la UI, de modo que la escena pueda restaurarse idéntica en el futuro 
+
+
+
+[⬆ Inicio](#indice)
+
+
+<br>
+
+--------------------------------------------------------------------------------
+
+### Ciclo de vida del ```UIViewController```
+
+
+Los metodos presentados a continuación son metodos que son llamados automaticamente por el sistema, por lo que no se ven declarado implicitamente <br> <br>
+``` swift
+    override func viewDidLoad() 
+    {
+        super.viewDidLoad()// Para obtener lo que apple tiene de viewDidLoad
+        
+    }
+```
+1. &nbsp;```viewDidLoad()``` .- Este método se llama una sola vez durante la vida del controlador<br><br>
+  <u><b>Cuando:</b></u> Justo después de que la vista del controlador se haya cargado en memoria desde el código o desde el storyboard (ViewController content view).<br><br>
+
+  <u><b>Usos Tipicos</b></u><br>
+   Ideal para configuraciones que sólo se hacen una vez, como:<br>
+  * Inicializar datos<br> 
+  * Crear vistas hijas programáticamente<br>
+  * Ideal para inicializar arrays<br>
+  * Configurar UI estática<br>
+  * Registrar celdas de TableView<br>
+  * Asignar títulos fijos o texto a labels<br>
+
+>[!CAUTION]
+><u><b>Que se debe de evitar en esta función?</b></u><br> Se debe de evitar llamadas a APIs que dependan de que la vista esté en pantalla (como medir su tamaño), ya que aún no está en la jerarquía 
+
+<br><br>
+
+``` swift
+    override func viewWillAppear(_ animated: Bool)
+    {
+        super.viewWillAppear(animated)
+       
+    }
+```
+2. &nbsp;```viewWillAppear(_:)```<br>
+
+    <u><b>Cuando:</b></u> Se dispara <u>**cada vez antes**</u>  de que la vista aparezca, es decir cada vez que la vista está a punto de mostrarse en pantalla, pero antes de que aparezca visualmente. (Antes de que el ```ContentView``` sea añadido a la ```View Hierarchy```)<br>
+
+    <u><b>Usos Tipicos</b></u><br>
+    * Actualizar datos<br>
+    * Iniciar animaciones personalizadas<br>
+    * Actualizar datos dinámicos<br>
+    * Actualizar el estado de la interfaz<br>
+
+<br><br>
+
+``` swift
+override func viewDidAppear(_ animated: Bool) 
+{
+    super.viewDidAppear(animated)
+
+}
+
+```
+
+3. &nbsp;```viewDidAppear(_:)```<br>
+   
+   <u><b>Cuando:</b></u> Se dispara <u>**cada vez justo después**</u> de que la vista ya está visible, es decir cuando la vista ha sido insertada y mostrada en pantalla (Después de que el ```ContentView``` es añadido a la ```View Hierarchy``` de la aplicación)<br><br>
+  <u><b>Usos Tipicos</b></u><br>
+    * Arrancar descarga de datos 
+    * Medir rendimiento
+    * Disparar animaciones
+    * Iniciar temporizadores 
+    * Reproducir videos.
+    * Lanzar analytics/medición de “tiempo hasta primer frame”.
+    * Evitar bloqueos en viewDidLoad moviendo aquí operaciones pesadas
+  
+<br><br>
+
+
+``` swift
+    override func viewWillDisappear(_ animated: Bool) 
+    {
+        super.viewWillDisappear(animated)
+    
+    }
+```  
+
+4. &nbsp;```viewWillDisappear(_:)```<br> 
+   
+   <u><b>Cuando:</b></u> Se dispara antes de que la _vista_ comience a salir de pantalla, es decir justo antes de quitar la vista del hierarchy (por ejemplo al hacer pop, dismiss o al tab bar cambiar de pestaña) (Antes de que el ```ContentView``` es removido de la ```View Hierarchy``` de la aplicación)<br><br>
+   <u><b>Usos Tipicos</b></u><br>
+   * Cancelar animaciones
+   * Desuscribirse de notificaciones (NotificationCenter)
+   * Guardar estado de formulario
+   * Detener temporizadores
+   * Cancelar tareas
+   * Guardar cambios
+  
+<br><br>
+
+
+``` swift
+    override func viewDidDisappear(_ animated: Bool) 
+    {
+        super.viewDidDisappear(animated)
+    
+    }
+```
+
+5. &nbsp;```viewDidDisappear(_:)```<br>
+  
+  <u><b>Cuando:</b></u> Se dispara después de que la vista haya sido removida del hierarchy, es decir después de que la vista ya no está en pantalla (Después de que el ```ContentView``` es removido de la ```View Hierarchy``` de la aplicación)<br><br>
+  <u><b>Usos Tipicos</b></u><br>
+  * Liberar recursos o vistas pesadas
+  * Liberar referencias a vistas auxiliares.
+  * Detener servicios de localización o streaming de audio
+    
+<br><br>
+
+
+``` swift
+    override func viewWillLayoutSubviews() 
+    {
+        super.viewWillLayoutSubviews()
+
+    }
+```
+
+6. &nbsp;```viewWillLayoutSubviews()```<br>
+  
+  <u><b>Cuando:</b></u> Se dispara justo antes de que el sistema calcule y asigne frames a las subviews, es decir antes de que Auto Layout o ```layoutSubviews()``` distribuya automáticamente las vistas hijas <small>(Cuando los limites de ```ContentView``` cambian, pero <b>_antes_</b> de poner sus subviews -> Como cuando se pasa a landscape de portrait mode, principalmente para poder realizar cambios y personalizaciones)</small><br><br>
+  <u><b>Usos Tipicos</b></u><br>
+  * Actualizar constraints dinámicos antes del layout
+  * Modificar constantes de constraints en función del tamaño de la vista
+  * Preparar animaciones de cambio de frame
+   
+<br><br>
+
+``` swift
+    override func viewDidLayoutSubviews() 
+    {
+        super.viewDidLayoutSubviews()
+        
+    }
+```
+
+7. &nbsp;```viewDidLayoutSubviews()```<br>
+  <u><b>Cuando:</b></u>  Se disparajusto después de que el sistema completó el layout de todas las subviews, es decir una vez que las subviews recibieron sus nuevos frames.<small>(Cuando los limites de ```ContentView``` cambian, pero <b>_despues_</b> de poner sus subviews -> Como cuando se pasa a landscape de portrait mode, principalmente para realizar animaciones, etc)</small><br><br>
+  <u><b>Usos Tipicos</b></u> <br>
+  * Ajustes finales basados en el tamaño ya asignado
+  * Ajustar capas de dibujo (por ejemplo, redondear esquinas de views con cornerRadius = view.bounds.height/2).
+  * Iniciar animaciones que dependan de la posición o tamaño final de las vistas
+<br>
+
+[⬆ Inicio](#indice)
+
+
+<br>
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -513,14 +994,105 @@ Son pedazos de código que realizan cierta tarea; estas tienen un tipo de retorn
 > * Facilitan el aprendizaje de nuevos algoritmos
 > * Aumentan la rentabilidad de los proyectos TI
 
+<br>
 
 [↩ Regresar](#qué-es)
+
+<br>
 
 [⬆ Inicio](#indice)
 
 ----------------------------------------------------------------------
 <!-- ------------------------------------------------------ -->
+
 ###### Subindice [3]
+
+>[!NOTE] 
+>En este subindice se muestra las difentes opciones que se tiene para tratar con un tipo <b>_Optional_</b><br><small>(Que son usados en swift para representar de forma segura la ausencia o presencia de un valor;  internamente un <b>_Optional_</b> es simplemente un ```enum``` generico con 2 posibles casos uno donde equivale a ```nil``` y otro de un parametro generico ```T``` que se le llama <b>_Wrapped_</b> y puede representar cualquier tipo(```Int```,```String```,```UIImage```,...); Por ello ```T?``` es solamente una sintaxis que te obliga a manejar cada posible ```nil```, ya que te indica que puede ser un tipo generico ```T``` o un ```nil```)</small>
+>``` swift
+>   enum Optional<Wrapped> 
+>   {
+>       case none        // equivale a 'nil'
+>       case some(Wrapped) // asocia un valor real al enum
+>   }
+>
+>```
+>↑ Asi es como estan definido los <b>_Opcionales_</b> en Swift; Esta representación hace posible el usar distintas maneras<small>(switch, if case,...)</small> para extraer los valores, y tambien hace posible el forzar la axhaustividad en el manejo del ```nil```.<br>Entonces una cosa importante a recordar es que ```Optional<T>``` == ```T?``` y que:
+>``` swift
+>    posibleEntero = nil        // es Optional.none
+>    posibleEntero = 42         // es Optional.some(42)
+>```
+><br>
+>
+>Para los siguientes ejemplose utiliza la siguiente var como ejemplo: 
+>```swift
+>var ages: [Int]? = [12,13,54,78,98,32,23]
+>ages.sort()
+>```
+>
+>* <u><b>Primera manera:</b></u> &nbsp; <code>nil coalescing</code><br>
+>En el caso del que el valor sea ```nil``` se le asigna un valor default
+>``` swift 
+>   let oldestAge = ages.last ?? 0
+>```
+><br>
+>
+>* <u><b>Segunda manera:</b></u> Optional Binding(<code>if let</code> / <code>guard let</code>)
+>   * <code>if let</code><br>
+> Se maneja si hay valores y tambien el caso de que no los haya
+>   ``` swift 
+>   if let oldestAge = ages.last
+>    {
+>       print("The oldest age is \(oldestAge)")
+>    }else
+>        {
+>            print("There is no oldest age. you must have no students.")
+>        }
+>   ```
+>   <br>
+>
+>   * <code>guard let</code><br>
+>En este caso guard se encarga de checar antes si el valor es diferente de ```nil``` (brindando el alcance de la variable a la función entera y no solo al el if)y si lo es entonces NO ejecuta el resto del código
+>   ``` swift 
+>       func getOldestAge()
+>       {
+>           guard let oldestAge = ages.last 
+>           else
+>           {
+>               return
+>           }
+>           // More code
+>       }
+>   ```
+>   <br>
+>
+>* <u><b>Tercera Manera</b></u> &nbsp; <code>force unwrap</code><br>
+>Se forza a obtener el valor sin importar si es un valor o ```nil```
+>``` swift 
+>   let oldestAge = ages.last!
+>```
+><br>
+>
+>* <u><b>Cuarta Manera:</b></u> Chaining ```?.```
+>``` swift
+>   let longitud = x?.description.count  // nil si x es nil
+>```
+><br>
+
+Estos mecanismos obligan al compilador a garantizar que nunca trates un nil como un valor real, evitando errores en tiempo de ejecución 
+
+
+[↩ Regresar]()
+
+<br>
+
+[⬆ Inicio](#indice)
+
+<br>
+
+----------------------------------------------------------------------
+<!-- ------------------------------------------------------ -->
+###### Subindice [4]
 >[!NOTE] 
 > Esto es el ejemplo correspondiente al  operador &nbsp;<code>===</code>&nbsp; 'Identico a '
 >``` swift
@@ -548,7 +1120,7 @@ Son pedazos de código que realizan cierta tarea; estas tienen un tipo de retorn
 
 ----------------------------------------------------------------------
 <!-- ------------------------------------------------------ -->
-###### Subindice [4]
+###### Subindice [5]
 >[!NOTE] 
 > Esto es el ejemplo correspondiente al  operador &nbsp;<code>!==</code>&nbsp; 'NO Identico a '
 > Para este ejemplo se toma la clase declarada en el <b><small>[Subindice 4](#subindice-4)</small></b> 
@@ -564,7 +1136,7 @@ Son pedazos de código que realizan cierta tarea; estas tienen un tipo de retorn
 
 ----------------------------------------------------------------------
 <!-- ------------------------------------------------------ -->
-###### Subindice [5]
+###### Subindice [6]
 >[!NOTE] 
 > Esto es el ejemplo correspondiente al  operador &nbsp;<code> ~= </code>&nbsp; 'Coincidencia de patrones'
 >Devuelve un valor booleano que indica si dos argumentos coinciden por igualdad de valor<br>
@@ -594,11 +1166,43 @@ Son pedazos de código que realizan cierta tarea; estas tienen un tipo de retorn
 
 [↩ Regresar](#comparación)
 
+<br>
+
 [⬆ Inicio](#indice)
+
+<br>
 
 ----------------------------------------------------------------------
 <!-- ------------------------------------------------------ -->
-###### Subindice [6]
+
+###### Subindice [7]
+
+>[!NOTE] 
+>Ejemplo del funcionamiento de los operadores <code>&-</code> y <code>&+</code> para truncar seguramente
+>
+>``` swift
+>    var willOverflow = UInt8.max
+>    willOverflow = willOverflow &+ 1
+>    // willOverflow equivale a 255, que es el valor maximo que UInt8 puede tener
+>    // willOverflow usando el operador para truncar con seguridad en los bits disponibles; ahora vale 0
+>
+>    var willUnderflow = UInt8.min
+>    willUnderflow = willUnderflow &- 1
+>    // willUnderflow esquivale a 0 ya que es el valor minimo que puede tener
+>    // willUnderflow usando el operador para truncar con seguridad en los bits disponibles; ahora vale 255
+>```
+
+[↩ Regresar](#desbordamiento)
+
+<br>
+
+[⬆ Inicio](#indice)
+
+<br>
+
+----------------------------------------------------------------------
+<!-- ------------------------------------------------------ -->
+###### Subindice [8]
 >[!NOTE] 
 > Ejemplo correspondiente al operador &nbsp;<code> ?. </code>&nbsp; 'Encadenamiento opcional'
 >
@@ -663,9 +1267,69 @@ Son pedazos de código que realizan cierta tarea; estas tienen un tipo de retorn
 
 ----------------------------------------------------------------------
 <!-- ------------------------------------------------------ -->
-###### Subindice []
+
+###### Subindice [9]
+
 >[!NOTE] 
+> <u>TIPOS POR REFERENCIA</u> (Reference Type) VS <u>TIPOS POR VALOR</u> (Value Type)
+> * Los <u><b>_Reference Types_</b></u> como las ```class``` en Swift, se almacenan una referencia a un objeto en la memoria. Por ello cuando asignas una variable a una instancia de una clase, la variable apunta al mismo objeto en memoria <br><br>  Lo que significa que significa que si se modifica la referencia se afecta a todas las demás(Un ejemplo fácil de recordar es que este tipo son como hojas de calculo de google, que si compartes tu hoja quien haga cambios afectará a la original) 
+> ``` swift
+>   class Persona 
+>   {
+>       var nombre: String
 >
+>       init(nombre: String) 
+>       {
+>           self.nombre = nombre
+>       }
+>   }
+>
+>   let persona1 = Persona(nombre: "Ana")
+>   let persona2 = persona1
+>   persona2.nombre = "Luis"
+>
+>   print(persona1.nombre) // Imprime "Luis"
+>```
+><br><br>
+>
+> * Los tipos <u><b>_Value Types_</b></u> como ```struct```, ```enum```, ```tuple```, almacenan los datos, directamente.Por ello cuando asignas una instancia de un value type a otra variable o la pasas a una función, se crea una copia independiente de los datos. Modificar una copia no afecta a las demás(Este es como los archivos excel que cada quien guarda su copia y al compartirlo se edita una copia local)
+>``` swift
+>   struct Persona 
+>   {
+>       var nombre: String
+>   }
+>
+>   var persona1 = Persona(nombre: "Ana")
+>   var persona2 = persona1
+>   persona2.nombre = "Luis"
+>
+>   print(persona1.nombre) // Imprime "Ana"
+>```
+>Aquí,```persona1``` y ```persona2``` son copias independientes. Cambiar nombre en ```persona2``` no afecta a ```persona1```.​
+
+
+
+
 [↩ Regresar]()
 
+<br>
+
 [⬆ Inicio](#indice)
+
+<br>
+
+----------------------------------------------------------------------
+<!-- ------------------------------------------------------ -->
+
+###### Subindice []
+
+>[!NOTE] 
+>
+
+[↩ Regresar]()
+
+<br>
+
+[⬆ Inicio](#indice)
+
+<br>
